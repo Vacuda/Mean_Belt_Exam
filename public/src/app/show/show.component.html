@@ -1,0 +1,49 @@
+<button [routerLink]="['/pets']" class="btn btn-success btn-top">Home</button>
+
+<h4>Details about {{onepet.name}}</h4>
+
+<div class="aroundtable">
+    <table>
+        <tr>
+            <td class="title">Pet type:</td>
+            <td>{{onepet.type}}</td>
+        </tr>
+        <tr>
+            <td class="title">Pet Description:</td>
+            <td>{{onepet.description}}</td>
+        </tr>
+        <tr>
+            <td class="title">Skills:</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="title"></td>
+            <td>
+                <ul>
+                    <div *ngIf="onepet.skill_1">
+                        <li>{{onepet.skill_1}}</li>
+                    </div>
+                    <div *ngIf="onepet.skill_2">
+                        <li>{{onepet.skill_2}}</li>
+                    </div>
+                    <div *ngIf="onepet.skill_3">
+                        <li>{{onepet.skill_3}}</li>
+                    </div>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td class="title">Likes:</td>
+            <td>{{onepet.likes}}</td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="likebutton">
+    <button (click)="likePet()" class="btn btn-warning">Like This Pet!</button>
+</div>
+<!-- <div *ngIf="likebutton==false">
+    <button class="btn btn-warning">barnacle</button>
+</div> -->
+<!-- <button (click)="likePet()" class="btn btn-warning">Like This Pet!</button> -->
+<button (click)="adoptPet()" class="btn btn-danger btn-delete">Adopt This Pet!  (destroy this pet)</button>

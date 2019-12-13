@@ -1,0 +1,43 @@
+
+<button [routerLink]="['/pets']" class="btn btn-success btn-top">Home</button>
+
+<h4>Edit this pet</h4>
+
+<div *ngIf="errors">
+    <h6>Errors:</h6>
+    <ul>
+        <div *ngFor="let item of errors">
+            <li class="errors">{{item.message}}</li>
+        </div>
+    </ul>
+
+</div>
+
+<form (submit)="updatePet()">
+    <div class="form-group">
+        <label for="name">Pet Name:</label>
+        <input name="updatepet.name" [(ngModel)]="updatepet.name" class="form-control" id="name" placeholder="---">
+    </div>
+    <div class="form-group">
+        <label for="type">Pet Type:</label>
+        <input name="updatepet.type" [(ngModel)]="updatepet.type" class="form-control" id="type" placeholder="---">
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea name="updatepet.description" [(ngModel)]="updatepet.description" class="form-control" id="description" rows="3" placeholder="---"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="skill_1">Skill 1</label>
+        <input name="updatepet.skill_1" [(ngModel)]="updatepet.skill_1" class="form-control" id="skill_1" placeholder="---">
+    </div>
+    <div class="form-group">
+        <label for="skill_2">Skill 2</label>
+        <input name="updatepet.skill_2" [(ngModel)]="updatepet.skill_2" class="form-control" id="skill_2" placeholder="---">
+    </div>
+    <div class="form-group">
+        <label for="skill_3">Skill 3</label>
+        <input name="updatepet.skill_3" [(ngModel)]="updatepet.skill_3" class="form-control" id="skill_3" placeholder="---">
+    </div>
+
+    <button class="btn btn-warning" type="submit">Update Pet</button>
+</form>
